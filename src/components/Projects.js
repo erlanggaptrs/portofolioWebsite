@@ -6,11 +6,50 @@ import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
 import TrackVisibility from 'react-on-screen';
 
+
 export const Projects = () => {
 
-const projects = [
+const firstProjects = [
     {
         title: "Bangkit Project",
+        description: "Projects",
+        imgUrl: projImg1,
+    },
+    {
+        title: "Bangkit Project",
+        description: "Projects",
+        imgUrl: projImg2,
+    },
+    {
+        title: "Bangkit Project",
+        description: "Projects",
+        imgUrl: projImg3,
+    },
+    {
+        title: "Bangkit Project",
+        description: "Projects",
+        imgUrl: projImg1,
+    },
+    {
+        title: "Bangkit Project",
+        description: "Projects",
+        imgUrl: projImg2,
+    },
+    {
+        title: "Bangkit Project",
+        description: "Projects",
+        imgUrl: projImg3,
+    },
+    {
+        title: "Bangkit Project",
+        description: "Projects",
+        imgUrl: projImg1,
+    },
+];
+
+const secondProjects = [
+    {
+        title: "Bangkit Certificate",
         description: "Projects",
         imgUrl: projImg1,
     },
@@ -54,8 +93,8 @@ return (
                 <TrackVisibility>
                     {({isVisible}) => 
                     <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
-                    <h2>Projects</h2>
-                    <p>Hello, these are the list of my projects</p>
+                    <h2>Projects & Certifications</h2>
+                    <p>Hello, these are the list of my projects & Certifications</p>
                     </div>}
                     </TrackVisibility>
                     <Tab.Container id="projects-tabs" defaultActiveKey="first">
@@ -75,7 +114,7 @@ return (
                             <p>First Projects</p>
                             <Row>
                                 {
-                                    projects.map((project, index)=> {
+                                    firstProjects.map((project, index)=> {
                                         return (
                                             <ProjectCard
                                             key={index}
@@ -88,6 +127,18 @@ return (
                         </Tab.Pane>
                         <Tab.Pane eventKey="second"> 
                         <p>Second Projects</p> 
+                        <Row>
+                                {
+                                    secondProjects.map((project, index)=> {
+                                        return (
+                                            <ProjectCard
+                                            key={index}
+                                            {...project}
+                                            />
+                                        )
+                                    })
+                                }
+                            </Row>
                         </Tab.Pane>
                         <Tab.Pane eventKey="third"> 
                         <p>Third Projects</p>
